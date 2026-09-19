@@ -1,0 +1,24 @@
+[Unit]
+Description=ARC Poker Next.js web
+After=network-online.target arc-poker-server.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=__APP_USER__
+Group=__APP_USER__
+WorkingDirectory=__APP_DIR__
+Environment=NODE_ENV=production
+EnvironmentFile=/etc/arc-poker/web.env
+ExecStart=/usr/bin/npm --workspace web run start -- --hostname 127.0.0.1 --port 3000
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=full
+ReadWritePaths=__APP_DIR__
+SyslogIdentifier=arc-poker-web
+
+[Install]
+WantedBy=multi-user.target

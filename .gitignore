@@ -1,0 +1,40 @@
+node_modules
+.npm-cache/
+
+# Local environment files
+
+.env
+.env.local
+*.env.local
+server/.env
+web/.env.local
+
+# Build output and runtime logs
+*.log
+.next/
+web/.next/
+server/dist/
+dist-extension/
+playwright-report/
+test-results/
+
+# Local Foundry downloads and generated artifacts
+contracts/cache/
+contracts/out/
+contracts/tools/
+contracts/latest-release.json
+
+# Local visual QA output
+/*.png
+
+# Local tools unrelated to the WILDCARD app
+/*-hackathon-lab/
+extension/
+scripts/build-extension.mjs
+scripts/validate-extension.mjs
+web/lib/astro-widget-data.ts
+web/pages/astro-widget.tsx
+web/public/astro-icon.svg
+web/public/manifest.webmanifest
+web/public/sw.js
+web/tests/astro-widget.spec.ts

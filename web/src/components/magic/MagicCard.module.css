@@ -1,0 +1,147 @@
+﻿.card {
+  position: relative;
+  width: min(240px, 28vw);
+  min-width: 170px;
+  height: calc(min(240px, 28vw) * 1.42);
+  min-height: 245px;
+  border: 0;
+  border-radius: 18px;
+  padding: 0.55rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: linear-gradient(165deg, rgba(16, 38, 52, 0.96), rgba(10, 23, 33, 0.96));
+  color: #eef8ff;
+  box-shadow:
+    0 10px 26px rgba(0, 0, 0, 0.42),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+  cursor: pointer;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    filter 120ms ease;
+  text-align: left;
+}
+
+.card:hover:not(.disabled) {
+  transform: translateY(-4px);
+}
+
+.compact {
+  width: 152px;
+  min-width: 152px;
+  height: 216px;
+  min-height: 216px;
+  padding: 0.42rem;
+  border-radius: 14px;
+}
+
+.peek {
+  box-shadow:
+    0 10px 26px rgba(0, 0, 0, 0.42),
+    inset 0 0 0 2px rgba(123, 210, 255, 0.5),
+    0 0 24px rgba(123, 210, 255, 0.2);
+}
+
+.swap {
+  box-shadow:
+    0 10px 26px rgba(0, 0, 0, 0.42),
+    inset 0 0 0 2px rgba(255, 157, 98, 0.55),
+    0 0 24px rgba(255, 157, 98, 0.2);
+}
+
+.shield {
+  box-shadow:
+    0 10px 26px rgba(0, 0, 0, 0.42),
+    inset 0 0 0 2px rgba(154, 255, 173, 0.55),
+    0 0 24px rgba(154, 255, 173, 0.2);
+}
+
+.disabled {
+  cursor: not-allowed;
+  filter: grayscale(0.35) brightness(0.78);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30px;
+}
+
+.header h4 {
+  margin: 0;
+  font-size: clamp(0.88rem, 1.2vw, 1.04rem);
+  letter-spacing: 0.04em;
+}
+
+.compact .header h4 {
+  font-size: 0.82rem;
+}
+
+.artWrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 0.35rem 0;
+  min-height: 0;
+}
+
+.art,
+.frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  padding: 0.2rem 0.2rem 0.15rem;
+}
+
+.footer p {
+  margin: 0;
+  font-size: clamp(0.72rem, 0.95vw, 0.82rem);
+  line-height: 1.2;
+  color: #d3ebf7;
+}
+
+.compact .footer p {
+  font-size: 0.68rem;
+  line-height: 1.15;
+}
+
+.badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border-radius: 999px;
+  background: rgba(4, 10, 16, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.18rem 0.42rem;
+  font-size: 0.66rem;
+  line-height: 1;
+}
+
+.compact .badge {
+  top: 6px;
+  right: 6px;
+  font-size: 0.58rem;
+  padding: 0.15rem 0.34rem;
+}
+
+@media (max-width: 760px) {
+  .card {
+    width: min(220px, 45vw);
+    min-width: 150px;
+    height: calc(min(220px, 45vw) * 1.42);
+    min-height: 214px;
+  }
+
+  .compact {
+    width: 132px;
+    min-width: 132px;
+    height: 188px;
+    min-height: 188px;
+  }
+}

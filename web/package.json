@@ -1,0 +1,31 @@
+{
+  "name": "web",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write .",
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "framer-motion": "^12.35.0",
+    "next": "14.2.32",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "socket.io-client": "4.8.1",
+    "viem": "^2.48.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.54.2",
+    "@types/node": "22.15.21",
+    "@types/react": "18.3.20",
+    "@types/react-dom": "18.3.7",
+    "eslint": "8.57.1",
+    "eslint-config-next": "14.2.32",
+    "prettier": "3.5.3",
+    "typescript": "5.8.3"
+  }
+}

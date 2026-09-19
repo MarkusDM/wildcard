@@ -1,0 +1,25 @@
+{
+  "name": "arc-poker-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "web",
+    "server"
+  ],
+  "scripts": {
+    "dev:web": "npm run -w web dev",
+    "dev:server": "npm run -w server dev",
+    "build:web": "npm run -w web build",
+    "build:server": "npm run -w server build",
+    "start:web": "npm run -w web start",
+    "start:server": "node server/dist/server/src/index.js",
+    "test:web": "npm run -w web test",
+    "test:lobby:visual": "node scripts/visual-check-wildcard-lobby.mjs",
+    "test:server": "npm run -w server test",
+    "test:contracts": "if exist contracts\\tools\\foundry\\forge.exe (cd contracts && .\\tools\\foundry\\forge.exe test) else (cd contracts && forge test)",
+    "deploy:vps": "bash scripts/vps-deploy.sh",
+    "logs:vps": "bash scripts/vps-logs.sh",
+    "lint": "npm run -w web lint && npm run -w server lint",
+    "format": "npm run -w web format && npm run -w server format"
+  }
+}

@@ -1,0 +1,24 @@
+[Unit]
+Description=ARC Poker Socket.IO server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=__APP_USER__
+Group=__APP_USER__
+WorkingDirectory=__APP_DIR__
+Environment=NODE_ENV=production
+EnvironmentFile=/etc/arc-poker/server.env
+ExecStart=/usr/bin/npm --workspace server run start
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=full
+ReadWritePaths=__APP_DIR__
+SyslogIdentifier=arc-poker-server
+
+[Install]
+WantedBy=multi-user.target
